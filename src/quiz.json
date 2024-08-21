@@ -1,0 +1,176 @@
+{
+    "topics": {
+      "recycling": {
+        "name": "Recycling",
+        "explanation": "Recycling is the process of converting waste into reusable material.",
+        "fullExplanation": "Recycling helps to reduce the waste we send to landfills and conserve natural resources.",
+        "questions": [
+          {
+            "question": "What is the symbol used to indicate a recyclable material?",
+            "options": ["Triangle with arrows", "Circle", "Square", "Star"],
+            "correctAnswer": "Triangle with arrows"
+          },
+          {
+            "question": "Which of the following materials can be recycled?",
+            "options": ["Plastic bottles", "Styrofoam", "Plastic bags", "Paper towels"],
+            "correctAnswer": "Plastic bottles"
+          },
+          {
+            "question": "What color bin is typically used for recycling paper?",
+            "options": ["Blue", "Green", "Red", "Yellow"],
+            "correctAnswer": "Blue"
+          },
+          {
+            "question": "Which process is a part of recycling?",
+            "options": ["Composting", "Melting down glass", "Burning waste", "Landfilling"],
+            "correctAnswer": "Melting down glass"
+          },
+          {
+            "question": "Which material cannot be recycled?",
+            "options": ["Glass", "Plastic", "Aluminum", "Ceramics"],
+            "correctAnswer": "Ceramics"
+          },
+          {
+            "question": "What is the primary benefit of recycling?",
+            "options": ["Reducing landfill waste", "Increasing waste production", "Promoting landfills", "Decreasing product quality"],
+            "correctAnswer": "Reducing landfill waste"
+          },
+          {
+            "question": "Recycling helps conserve which natural resource?",
+            "options": ["Water", "Oil", "Air", "All of the above"],
+            "correctAnswer": "All of the above"
+          },
+          {
+            "question": "What is e-waste?",
+            "options": ["Electronic waste", "Energy waste", "Environmental waste", "Educational waste"],
+            "correctAnswer": "Electronic waste"
+          },
+          {
+            "question": "Which type of plastic is most commonly recycled?",
+            "options": ["PET", "PVC", "LDPE", "PS"],
+            "correctAnswer": "PET"
+          },
+          {
+            "question": "Which of these is a challenge in recycling?",
+            "options": ["Contamination", "Clean products", "Biodegradability", "Low waste production"],
+            "correctAnswer": "Contamination"
+          }
+        ]
+      },
+      "climate_change": {
+        "name": "Climate Change",
+        "explanation": "Climate change refers to long-term changes in temperature and weather patterns.",
+        "fullExplanation": "Climate change is primarily driven by human activities, such as burning fossil fuels, deforestation, and industrial processes.",
+        "questions": [
+          {
+            "question": "What gas is the primary contributor to climate change?",
+            "options": ["Carbon dioxide", "Oxygen", "Nitrogen", "Argon"],
+            "correctAnswer": "Carbon dioxide"
+          },
+          {
+            "question": "Which sector is the largest source of greenhouse gas emissions?",
+            "options": ["Energy", "Transportation", "Agriculture", "Industry"],
+            "correctAnswer": "Energy"
+          },
+          {
+            "question": "Which international agreement aims to combat climate change?",
+            "options": ["Paris Agreement", "Kyoto Protocol", "Montreal Protocol", "Geneva Convention"],
+            "correctAnswer": "Paris Agreement"
+          },
+          {
+            "question": "What is the main cause of sea-level rise?",
+            "options": ["Melting glaciers", "Volcanic activity", "Earthquakes", "Tidal waves"],
+            "correctAnswer": "Melting glaciers"
+          },
+          {
+            "question": "Which renewable energy source is most affected by climate change?",
+            "options": ["Hydropower", "Solar power", "Wind power", "Geothermal"],
+            "correctAnswer": "Hydropower"
+          },
+          {
+            "question": "Which of these is a consequence of climate change?",
+            "options": ["Increased frequency of extreme weather events", "Stable global temperatures", "Decreased sea levels", "Reduced greenhouse gas emissions"],
+            "correctAnswer": "Increased frequency of extreme weather events"
+          },
+          {
+            "question": "What can individuals do to help reduce climate change?",
+            "options": ["Reduce energy consumption", "Increase fossil fuel use", "Ignore environmental issues", "Increase deforestation"],
+            "correctAnswer": "Reduce energy consumption"
+          },
+          {
+            "question": "Which region is warming faster than the global average?",
+            "options": ["Arctic", "Equator", "Tropics", "Antarctica"],
+            "correctAnswer": "Arctic"
+          },
+          {
+            "question": "What is the effect of climate change on coral reefs?",
+            "options": ["Coral bleaching", "Increased growth", "Stable conditions", "Decreased biodiversity"],
+            "correctAnswer": "Coral bleaching"
+          },
+          {
+            "question": "Which of the following is a natural cause of climate change?",
+            "options": ["Volcanic eruptions", "Industrial emissions", "Deforestation", "Urbanization"],
+            "correctAnswer": "Volcanic eruptions"
+          }
+        ]
+      },
+      "solar_power": {
+        "name": "Solar Power",
+        "explanation": "Solar power is the conversion of energy from sunlight into electricity.",
+        "fullExplanation": "Solar power is a renewable energy source that is harnessed using photovoltaic cells, solar panels, and other solar technologies.",
+        "questions": [
+          {
+            "question": "What device is used to convert sunlight into electricity?",
+            "options": ["Solar panel", "Wind turbine", "Hydroelectric dam", "Geothermal plant"],
+            "correctAnswer": "Solar panel"
+          },
+          {
+            "question": "Which material is commonly used in solar panels?",
+            "options": ["Silicon", "Copper", "Aluminum", "Iron"],
+            "correctAnswer": "Silicon"
+          },
+          {
+            "question": "What is the main advantage of solar power?",
+            "options": ["It's renewable", "It's finite", "It emits carbon", "It requires fossil fuels"],
+            "correctAnswer": "It's renewable"
+          },
+          {
+            "question": "What is a major challenge in solar power adoption?",
+            "options": ["Intermittency", "Abundance", "High energy output", "Low installation cost"],
+            "correctAnswer": "Intermittency"
+          },
+          {
+            "question": "What does PV stand for in the context of solar power?",
+            "options": ["Photovoltaic", "Power voltage", "Positive voltage", "Photo volt"],
+            "correctAnswer": "Photovoltaic"
+          },
+          {
+            "question": "Which country leads in solar power capacity?",
+            "options": ["China", "USA", "India", "Germany"],
+            "correctAnswer": "China"
+          },
+          {
+            "question": "How do solar panels generate electricity?",
+            "options": ["By converting sunlight", "By burning sunlight", "By reflecting sunlight", "By heating water"],
+            "correctAnswer": "By converting sunlight"
+          },
+          {
+            "question": "What is the lifespan of a typical solar panel?",
+            "options": ["20-25 years", "5-10 years", "50-60 years", "1-2 years"],
+            "correctAnswer": "20-25 years"
+          },
+          {
+            "question": "Which type of solar energy system can store energy for later use?",
+            "options": ["Solar battery", "Wind turbine", "Gas generator", "Nuclear reactor"],
+            "correctAnswer": "Solar battery"
+          },
+          {
+            "question": "What is the effect of shading on solar panel efficiency?",
+            "options": ["Reduces efficiency", "Increases efficiency", "No effect", "Doubles efficiency"],
+            "correctAnswer": "Reduces efficiency"
+          }
+        ]
+      }
+    }
+  }
+  
