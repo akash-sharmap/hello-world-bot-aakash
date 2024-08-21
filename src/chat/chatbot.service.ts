@@ -28,41 +28,43 @@ export class ChatbotService {
   }
 
   public async processMessage(body: any): Promise<any> {
-    console.log("body: ", body);
     const { from, button_response, text } = body;
     let botID = process.env.BOT_ID;
     const userData = await this.userService.findUserByMobileNumber(from);
     const { intent = undefined, entities = undefined } = text? this.intentClassifier.getIntent(text.body): {};
-    console.log("logged by akash: ", button_response, body);
-    if (userData.language === 'english' || userData.language === 'hindi') {
-      await this.userService.saveUser(userData);
-    }
-    if (intent === 'greeting') {
-      await this.message.sendWelcomeMessage(from, userData.language);
-      // await this.createLanguageButton(from);
-      // this.createTopicButtonsFromQuizData(from);
-      await this.createYesNoButton(from);
-    } else if (intent === 'select_language') {
-      const selectedLanguage = entities[0];
-      const userData = await this.userService.findUserByMobileNumber(from);
-      userData.language = selectedLanguage;
-      userData.language = selectedLanguage;
-      await this.userService.saveUser(userData);
-      this.message.sendLanguageChangedMessage(from, userData.language);
-    }else if (button_response && button_response.body === "Yes, let's start!"){
-      await this.createTopicButtonsFromQuizData(from);
-    }else if(button_response && button_response.body === "Not right now."){
-      this.message.endSession(from, button_response.body);
-    }else if(button_response && this.topicListShown && button_response.body === "Tell me more."){
-      await this.handleTellMeMore(from);
-    }else if(button_response && this.topicListShown && button_response.body === "Got it, let's quiz!"){
-      await this.startQuiz(from);
-    }else if(button_response && this.topicListShown){
-
-      await this.handleTopicClick(from, button_response);
-    }else if (this.quizResponse.length > 0) {
-        // Handle the quiz answer if we're in the middle of a quiz
-        await this.handleQuizResponse(from, button_response);
+    if(button_response){
+      if (button_response.body === "Yes, let's start!"){
+        await this.createTopicButtonsFromQuizData(from);
+      }else if(button_response.body === "Not right now."){
+        this.message.endSession(from, button_response.body);
+      }else if(this.topicListShown && button_response.body === "Tell me more."){
+        await this.handleTellMeMore(from);
+      }else if(this.topicListShown && button_response.body === "Got it, let's quiz!"){
+        await this.startQuiz(from);
+      }else if(this.topicListShown){
+  
+        await this.handleTopicClick(from, button_response);
+      }else if (this.quizResponse.length > 0) {
+          // Handle the quiz answer if we're in the middle of a quiz
+          await this.handleQuizResponse(from, button_response);
+      }
+    }else{
+      if (userData.language === 'english' || userData.language === 'hindi') {
+        await this.userService.saveUser(userData);
+      }
+      if (intent === 'greeting') {
+        await this.message.sendWelcomeMessage(from, userData.language);
+        // await this.createLanguageButton(from);
+        // this.createTopicButtonsFromQuizData(from);
+        await this.createYesNoButton(from);
+      } else if (intent === 'select_language') {
+        const selectedLanguage = entities[0];
+        const userData = await this.userService.findUserByMobileNumber(from);
+        userData.language = selectedLanguage;
+        userData.language = selectedLanguage;
+        await this.userService.saveUser(userData);
+        this.message.sendLanguageChangedMessage(from, userData.language);
+      }
     }
     return 'ok';
   }
@@ -166,7 +168,6 @@ private async endQuiz(from: string): Promise<void> {
 
   private async handleTopicClick(from: string, button_response: any): Promise<void> {
     const {button_index} = button_response;
-    console.log("index: ", button_index);
     await this.message.sendTextMessage(from, data.topics[button_index].explanation);
     const button_data = {
       buttons: [
@@ -188,7 +189,7 @@ private async endQuiz(from: string): Promise<void> {
   }
 
   private async createTopicButtonsFromQuizData(from: string): Promise<void> {
-    const buttons = Object.keys(data.topics).map(key => {
+    const buttons = data.topics.map(item =>{
       return {
         type: "solid",
         body: item.name,
@@ -219,7 +220,7 @@ private async endQuiz(from: string): Promise<void> {
         ],
         body: "Choose option"
     }
-    return this.createButtons(from, button_data);
+    await this.createButtons(from, button_data);
   }
 
   private async createButtons(from: string, button_data: any): Promise<void> {
@@ -239,13 +240,12 @@ private async endQuiz(from: string): Promise<void> {
     },
     };
     try {
-    const response = await axios.post(url, messageData, {
+    await axios.post(url, messageData, {
         headers: {
         Authorization: `Bearer ${this.apiKey}`,
         'Content-Type': 'application/json',
         },
     });
-    return response.data;
     }
     catch (error) {
     console.error('errors:', error);
